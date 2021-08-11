@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 using namespace std;
 
 //used for evaluating 2 digit numbers.
@@ -42,6 +43,7 @@ double pairRate(int pair) {
 		case 40:
 		case 80:
 		case 60:
+		case 14:
 			cout << "\t" << pair << " is a nice number. " << endl;
 			return 1.5;
 		case 42:
@@ -260,11 +262,15 @@ cout << " is " << score << "/10. " << endl;
   return score;
 } 
 
-int main() {
+int main(int argc, char *argv[]) {
 	int input;
-	cout << "Enter your number: ";
-	cin >> input;
-	cout << "\n";
+	if (argc > 1) {
+		input = atoi(argv[1]);
+	} else {
+		cout << "Enter your number: ";
+		cin >> input;
+		cout << "\n";
+	}
 	rate(input);
 	return 0;
 }
