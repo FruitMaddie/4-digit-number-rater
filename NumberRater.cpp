@@ -64,6 +64,33 @@ double pairRate(int pair) {
 			cout << setw(2) << setfill('0') << pair;
 			cout << " is uncreative. Get real. " << endl;
 			return 0;
+		case 2:
+		case 3:
+		case 5:
+		case 7:
+		case 11:
+		case 13:
+		case 17:
+		case 19:
+		case 23:
+		case 29:
+		case 31:
+		case 37:
+		case 41:
+		case 43:
+		case 47:
+		case 53:
+		case 59:
+		case 61:
+		case 67:
+		case 71:
+		case 73:
+		case 79:
+		case 83:
+		case 89:
+		case 97:
+			cout << "\t" << pair << " is a prime number. kinda okay. " << endl;
+			return 0.75;
 	}
 	
 	if (pair%5 == 0) {
@@ -257,11 +284,26 @@ double rate(int input) {
 	 cout << "\tThis number has at least 1 even digit. Thank God. " << endl;
 	 score++;
  }
+  
+   if (digit1 % 2 != 0 && digit2 % 2 != 0 && digit3 % 2 != 0 && digit4 % 2 != 0) {
+	 cout << "\tThis number only has odd digits. Odds drool and drool is hot " << endl;
+	 score++;
+ }
+
+  if ((digit1 % 2 == 0 || digit2 % 2 == 0 || digit3 % 2 == 0 || digit4 % 2 == 0)&&(digit1 % 2 != 0 || digit2 % 2 != 0 || digit3 % 2 != 0 || digit4 % 2 != 0)) {
+	 cout << "\tThis number has odd and even digits. They hate each other >:( " << endl;
+	 score--;
+ }
  
  if (digit1 == 5 || digit2 == 5 || digit3 == 5 || digit4 == 5) {
 	 cout << "\tThis number has a 5 in it. Pentagonal! " << endl;
 	 score++;
  }
+  
+  if(digit1 == digit4 && digit2 == digit3){
+                   cout << "\tSymetric number! Pretty." <<endl;
+                   score++;
+  }
  
 cout << "The score for ";
 cout << setw(4) << setfill('0') << input;
