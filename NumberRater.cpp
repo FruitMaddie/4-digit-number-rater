@@ -289,6 +289,11 @@ double rate(int input) {
 	 cout << "\tThis number only has odd digits. Odds drool and drool is hot " << endl;
 	 score++;
  }
+
+  if ((digit1 % 2 == 0 || digit2 % 2 == 0 || digit3 % 2 == 0 || digit4 % 2 == 0)&&(digit1 % 2 != 0 || digit2 % 2 != 0 || digit3 % 2 != 0 || digit4 % 2 != 0)) {
+	 cout << "\tThis number has odd and even digits. They hate each other >:( " << endl;
+	 score--;
+ }
  
  if (digit1 == 5 || digit2 == 5 || digit3 == 5 || digit4 == 5) {
 	 cout << "\tThis number has a 5 in it. Pentagonal! " << endl;
