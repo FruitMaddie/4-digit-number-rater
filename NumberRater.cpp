@@ -224,16 +224,23 @@ double rate(int input) {
   cout << " and ";
   cout << setw(2) << setfill('0') << secondPair;
   cout << ". " << endl;
-  double firstScore  = pairRate(firstPair );
-  double secondScore = pairRate(secondPair);
+  double firstScore = pairRate(firstPair);
+  double secondScore;
+  if (firstPair == secondPair) {
+	  cout << "\tThe two pairs are the same! So they get the same score. And a little bonus, as a treat. " << endl;
+	  secondScore = firstScore;
+	  score += 0.25;
+  } else {
+	  secondScore = pairRate(secondPair);
+  }
   
   if (firstScore == 0 && secondScore == 0 && input != 6969) {
 	cout << "\tThose number pairs kinda blow :/ " << endl;
-  } else if (firstScore == 0 && firstPair != 69) {
+  } else if (firstScore == 0 && firstPair != 69 && firstPair != 0) {
 	  cout << "\t";
 	  cout << setw(2) << setfill('0') << firstPair;
 	  cout << " sucked. " << endl;
-  } else if (secondScore == 0 && secondPair != 69) {
+  } else if (secondScore == 0 && secondPair != 69 && secondPair != 0 && firstPair != secondPair) {
 	  cout << "\t";
 	  cout << setw(2) << setfill('0') << secondPair;
 	  cout << " sucked. " << endl;
